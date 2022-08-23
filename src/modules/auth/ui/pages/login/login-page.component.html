@@ -1,0 +1,41 @@
+<div class="auth__body">
+  <div class="auth__container">
+
+    <div class="auth__logo">
+      <img src="/assets/images/auth/logo.svg" alt="?">
+    </div>
+
+    <h1 class="auth__title">
+      Kilogram
+    </h1>
+
+    <h2 class="auth__subtitle">
+      Please enter your email and password.
+    </h2>
+
+    <div class="auth__input input">
+      <input type="text" placeholder="email">
+    </div>
+
+    <div class="auth__input input">
+      <input type="text" placeholder="password">
+    </div>
+
+    <div class="auth__checkbox">
+      <input type="checkbox">
+      <label class="text">Keep me signed in</label>
+    </div>
+
+    <div class="auth__button button">
+      <div class="text">Continue</div>
+      <div class="button__background"></div>
+    </div>
+
+    <div class="register__button button"
+         (click)="navigateToSignupPage()"
+    >
+      <div class="text">Create an Account</div>
+      <div class="button__background"></div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/ubuntu/Ubuntu-Bold.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 700;
+  src: url("./assets/fonts/ubuntu/Ubuntu-BoldItalic.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./assets/fonts/ubuntu/Ubuntu-Italic.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./assets/fonts/ubuntu/Ubuntu-Light.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 300;
+  src: url("./assets/fonts/ubuntu/Ubuntu-LightItalic.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/ubuntu/Ubuntu-Medium.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: italic;
+  font-weight: 500;
+  src: url("./assets/fonts/ubuntu/Ubuntu-MediumItalic.ttf") format("ttf")
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/fonts/ubuntu/Ubuntu-Regular.ttf") format("ttf")
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+}
