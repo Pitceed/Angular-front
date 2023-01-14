@@ -1,0 +1,21 @@
+
+  <div class="chat__container" [class.active]="isActive">
+    <div class ="image__block">
+      <div class="image">{{ chat.imageUrl }}</div>
+    </div>
+    <div class="chat__content">
+      <div class="chat__title">
+        <i class="material-symbols-outlined">search</i>
+        <div class="message__title">
+          {{ chat.title }}
+        </div>
+        <div class="message_date">
+          {{ chat.lastMessage?.createdAt }}
+        </div>
+      </div>
+      <div class="chat__last__message">
+        {{ chat.lastMessage?.text }}
+      </div>
+    </div>
+  </div>
+

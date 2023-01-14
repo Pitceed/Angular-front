@@ -1,0 +1,47 @@
+
+<div class="home-page__body">
+  <div class="home-page__container">
+
+    <div class="menu__column">
+      menu elements
+    </div>
+
+    <div class="chats__column" >
+      <app-chat-list-item
+        *ngFor="let chat of mockChats"
+        [chat]="chat"
+        [isActive]="chat.id === currentChatId"
+        (click)="selectChat(chat)"
+      ></app-chat-list-item>
+    </div>
+
+    <div class="messaging__column">
+      <div *ngIf="currentChatId" class="header">
+          {{mockChats[+currentChatId-1].title}}
+      </div>
+      <div class="messages__list">
+        <div class="scroll__wrapper">
+
+          <ng-container *ngIf="currentChatId; else: chatNotSelectedTmpl">
+            <div *ngFor="let msg of mockMessagesArr[+currentChatId-1]" class="message__instance" [class.personal]="msg.authorId == currentUserId">
+              {{msg.text}}
+            </div>
+          </ng-container>
+
+          <ng-template #chatNotSelectedTmpl>
+            <div class="chat-not-selected"> Select chat </div>
+          </ng-template>
+
+        </div>
+      </div>
+      <div class="input__container">
+        <input>
+        <div class="send__button">
+          <i class="material-symbols-outlined">send</i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
