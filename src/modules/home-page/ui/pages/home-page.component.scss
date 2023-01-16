@@ -1,0 +1,33 @@
+
+.home-page__body {
+  .home-page__container {
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    position: fixed;
+
+    .menu__column {
+      width: 5.625rem;
+      min-width: 5.625rem;
+      background-color: #293a4c;
+    }
+
+    .chats__column {
+      display: block;
+      color: black;
+      width: 20.3rem;
+      min-width: 20.3rem;
+      background-color: white;
+      border: solid 1px #e7e7e7;
+    }
+
+    .messaging__column {
+      background-color: #8eb46d;
+      flex-grow: 1;
+      display: flex;
+    }
+  }
+}
+
+

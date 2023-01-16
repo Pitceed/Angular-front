@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {ChatInterface} from "../../contracts/chat";
+import { Component, Input } from "@angular/core";
+import { ChatInterface } from "../../contracts/chat";
 
 @Component({
   selector: 'app-chat-list-item',
@@ -7,6 +7,9 @@ import {ChatInterface} from "../../contracts/chat";
   styleUrls: ['chat-list-item.component.scss']
 })
 export class ChatListItemComponent {
-  @Input() chat: ChatInterface
-  @Input() isActive: boolean = false
+  @Input()
+  public chat: ChatInterface
+
+  @Input()
+  public isActive: boolean
 }

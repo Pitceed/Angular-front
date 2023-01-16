@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from "../modules/auth/auth.module";
 import { AppRoutingModule } from "./app.routing-module";
 import { ReactiveFormsModule } from "@angular/forms";
-import { HomePageModule } from "../modules/home-page/home-page.module";
+
 
 @NgModule({
   declarations: [
@@ -12,7 +12,6 @@ import { HomePageModule } from "../modules/home-page/home-page.module";
   ],
   imports: [
     BrowserModule,
-    HomePageModule,
     AuthModule,
     AppRoutingModule,
     ReactiveFormsModule

@@ -1,0 +1,21 @@
+<div *ngIf="chat" class="header">
+   {{chat.title}}
+ </div>
+
+ <div class="messages__list">
+   <div class="scroll__wrapper">
+
+     <div *ngFor="let msg of messages" class="message__instance" [class.personal]="msg.authorId == currentUserId">
+       {{msg.text}}
+     </div>
+
+   </div>
+ </div>
+
+ <div class="input__container">
+   <input>
+   <div class="send__button">
+     <i class="material-symbols-outlined">send</i>
+   </div>
+ </div>
+

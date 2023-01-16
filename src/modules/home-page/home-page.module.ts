@@ -1,8 +1,9 @@
 import { NgModule } from "@angular/core";
-import { HomePageComponent } from "./home-page.component";
+import { HomePageComponent } from "./ui/pages/home-page.component";
 import { ChatListItemComponent } from "./ui/components/chat-list-item.component";
-import { BrowserModule } from "@angular/platform-browser";
 import { CommonModule } from "../shared/common.module";
+import { ChatViewComponent } from "./ui/components/chat-view.component";
+import { HomePageRoutingModule } from "./home-page.routing-module";
 
 
 @NgModule({
@@ -11,11 +12,12 @@ import { CommonModule } from "../shared/common.module";
   ],
   declarations: [
     HomePageComponent,
+    ChatViewComponent,
     ChatListItemComponent
   ],
   imports: [
-    BrowserModule,
-    CommonModule
+    CommonModule,
+    HomePageRoutingModule
   ],
 
 })

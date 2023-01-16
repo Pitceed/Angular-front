@@ -1,0 +1,24 @@
+
+<div class="home-page__body">
+  <div class="home-page__container">
+
+    <div class="menu__column">
+      menu elements
+    </div>
+
+    <div class="chats__column" >
+      <app-chat-list-item
+        *ngFor="let chat of mockChats"
+        [chat]= "chat"
+        [isActive]= "currentChatId == chat.id"
+        (click)="selectChat(chat)"
+      ></app-chat-list-item>
+    </div>
+
+    <div class="messaging__column">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+
