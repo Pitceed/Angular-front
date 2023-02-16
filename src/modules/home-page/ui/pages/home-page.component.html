@@ -3,7 +3,8 @@
   <div class="home-page__container">
 
     <div class="menu__column">
-      menu elements
+      <i class="material-symbols-outlined" (click)="openUserPanel()">menu</i>
+      <user-view-component *ngIf="menuIsActive"></user-view-component>
     </div>
 
     <div class="chats__column" >

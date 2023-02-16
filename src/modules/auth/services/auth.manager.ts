@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import {filter, ReplaySubject, take, tap} from "rxjs";
+import { filter, ReplaySubject, take, tap} from "rxjs";
 import { toPromise } from "../../../utils/wrap-observable-with-promise";
+import {UserInterface} from "../interfaces/user.interface";
 
 @Injectable()
 export class AuthManager {
 
-  public readonly currentUser$ = new ReplaySubject(1)
+  public readonly currentUser$ = new ReplaySubject<UserInterface>(1)
   public readonly accessToken$ = new ReplaySubject<string | null>(1)
 
   private readonly TOKEN_KEY = 'APP[accessToken]'
@@ -38,14 +39,13 @@ export class AuthManager {
     })
 
     this.accessToken$.subscribe(accessToken => {
-       console.log('accessToken$', accessToken)
        window.localStorage.setItem(this.TOKEN_KEY, accessToken ?? '')
     })
   }
 
   public async getCurrentUser(token: string) {
      return toPromise(
-        this.http.get<string>(
+        this.http.get<UserInterface>(
            'http://localhost:3000/me', {
              headers: { Authorization: `Bearer ${token}` }
            }

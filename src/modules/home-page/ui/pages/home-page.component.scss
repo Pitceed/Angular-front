@@ -8,9 +8,12 @@
     position: fixed;
 
     .menu__column {
+      display: flex;
+      justify-content: center;
       width: 5.625rem;
       min-width: 5.625rem;
       background-color: #293a4c;
+      padding-top: 20px;
     }
 
     .chats__column {

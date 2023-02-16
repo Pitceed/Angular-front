@@ -10,5 +10,6 @@ export interface ChatInterface {
 export interface MessageInterface {
   text: string
   createdAt: string
-  authorId: number
+  authorId: string
+  chatId: string
 }

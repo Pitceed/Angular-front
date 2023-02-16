@@ -15,6 +15,7 @@ export class HomePageComponent {
   public currentUserId = 0
   public currentChatId?: string
   public mockChats: ChatInterface[] = [];
+  public menuIsActive: boolean = false;
 
   ngOnInit() {
     this.getChats()
@@ -34,5 +35,9 @@ export class HomePageComponent {
   public selectChat(chat: ChatInterface) : void {
     this.currentChatId = chat.id
     this.router.navigate([chat.id], {relativeTo: this.activatedRoute})
+  }
+
+  public openUserPanel() {
+    this.menuIsActive = !this.menuIsActive
   }
 }

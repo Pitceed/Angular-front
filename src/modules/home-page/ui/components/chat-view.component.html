@@ -5,7 +5,7 @@
  <div class="messages__list">
    <div class="scroll__wrapper">
 
-     <div *ngFor="let msg of messages" class="message__instance" [class.personal]="msg.authorId == currentUserId">
+     <div *ngFor="let msg of mockMessages" class="message__instance" [class.personal]="msg.authorId == currentUser.id">
        {{msg.text}}
      </div>
 
@@ -13,8 +13,8 @@
  </div>
 
  <div class="input__container">
-   <input>
-   <div class="send__button">
+   <input #messageInput>
+   <div class="send__button" (click)="sendMessage(messageInput.value)">
      <i class="material-symbols-outlined">send</i>
    </div>
  </div>
