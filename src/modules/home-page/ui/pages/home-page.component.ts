@@ -3,6 +3,7 @@ import { AuthManager } from "../../../auth/services/auth.manager";
 import { ChatInterface } from "../../contracts/chat";
 import { MessagingService } from "../../../../services/messaging.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import * as events from "events";
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -38,6 +39,10 @@ export class HomePageComponent {
   }
 
   public openUserPanel() {
-    this.menuIsActive = !this.menuIsActive
+    this.menuIsActive = true
+  }
+
+  public closeUserPanel(event: events) {
+    this.menuIsActive = false
   }
 }

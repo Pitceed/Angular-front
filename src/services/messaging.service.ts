@@ -22,7 +22,6 @@ export class MessagingService {
         if(!user) {
           return of([])
         }
-        console.log(user.id)
         return this.getChatByUserId(user.id)
       })
     )
@@ -38,7 +37,6 @@ export class MessagingService {
           authorId: authorId
         })
     )
-    console.log(response)
     return response
   }
   public async getMessagesByChatId(chatId: string) {
@@ -55,7 +53,6 @@ export class MessagingService {
     let response = await toPromise(
       this.http.post('http://localhost:3000/chats-by-userId',
         {userId}))
-    console.log(response)
     return response as ChatInterface[]
   }
 }

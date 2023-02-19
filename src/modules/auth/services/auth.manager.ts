@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { filter, ReplaySubject, take, tap} from "rxjs";
 import { toPromise } from "../../../utils/wrap-observable-with-promise";
 import {UserInterface} from "../interfaces/user.interface";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthManager {
@@ -14,7 +15,8 @@ export class AuthManager {
   // private readonly USER_KEY = 'user'
 
   constructor(
-    private readonly http: HttpClient
+    private readonly http: HttpClient,
+    private readonly router: Router
   ) {
     this.initialize()
   }
@@ -44,33 +46,40 @@ export class AuthManager {
   }
 
   public async getCurrentUser(token: string) {
-     return toPromise(
+     const response = await toPromise(
         this.http.get<UserInterface>(
            'http://localhost:3000/me', {
              headers: { Authorization: `Bearer ${token}` }
            }
         )
      )
+    console.log(response)
+    return response
   }
 
-  public async login(username: string, password: string) {
+  public async login(email: string, password: string) {
 
     const response = await toPromise(this.http.post<TokensResponse> (
-      'http://localhost:3000/login', { username, password }
+      'http://localhost:3000/login', { email, password }
     ))
     this.accessToken$.next(response.access_token)
 
     return true
   }
 
-  public async register(username: string, password: string) {
+  public async register(email: string, password: string) {
 
     const response = await toPromise(this.http.post<TokensResponse>(
-      'http://localhost:3000/register', { username, password }
+      'http://localhost:3000/register', { email, password }
     ))
     this.accessToken$.next(response.access_token)
 
     return true
+  }
+
+  public async logout() {
+    await this.router.navigate([''])
+    localStorage.clear()
   }
 }
 

@@ -1,8 +1,46 @@
 :host {
-  position: absolute;
-  width: 38%;
-  height: 93%;
-  background-color: white;
-  top: 4rem;
-  z-index: 1;
+  .user__sidebar {
+    position: absolute;
+    color: black;
+    width: 22rem;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    transform: translateX(0rem);
+    transition: transform 0.2s ease-in-out;
+    z-index: 2;
+    .user__data {
+      padding: 1rem;
+    }
+    &:not(.active) {
+      transform: translateX(-22rem);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .user__logout {
+      display: flex;
+      align-items: center;
+      height: 5rem;
+      background-color: #737373;
+      transition: all 0.2s;
+      &:hover {
+        background-color: #40a7e3;
+      }
+    }
+  }
+
+  .user__blur-overlay {
+    position: absolute;
+    backdrop-filter: grayscale(40%) blur(20px);
+    width: 100%;
+    height: 100%;
+    background-color: #575757;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.5;
+  }
+
+
 }
