@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from "../modules/auth/auth.module";
 import { AppRoutingModule } from "./app.routing-module";
 import { ReactiveFormsModule } from "@angular/forms";
+import {AuthGuard} from "../guards/auth.guard";
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

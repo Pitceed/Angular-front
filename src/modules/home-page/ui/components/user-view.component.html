@@ -1,17 +1,36 @@
 <div class="user__sidebar" [class.active]="isActive">
   <div class="user__data">
-    Your id: {{currentUser.id}}
+    Your id: {{currentUser?.id}}
   </div>
   <div class="user__data">
-    Your username: {{currentUser.username}}
+    Your username: {{currentUser?.username}}
   </div>
   <div class="user__data">
-    Your email: {{currentUser.email}}
+    Your email: {{currentUser?.email}}
   </div>
+
+  <div class="user__data new__chat" (click)="switchTitle('personal')">
+    <i class="material-symbols-outlined">person</i>
+    <div>
+      New Personal chanel
+    </div>
+  </div>
+
+  <div class="user__data new__chat" (click)="switchTitle('group')">
+    <i class="material-symbols-outlined">group</i>
+    <div>
+      New Group chanel
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+
   <div class="user__data user__logout" (click)="logout()">
     Logout
   </div>
 </div>
-<div *ngIf="isActive" class="user__blur-overlay" (click)="closeUserPanel.emit()">
+<div *ngIf="isActive" class="user__blur-overlay" (click)="closeUserPanel.emit(); closeChatCreating()">
 
 </div>
+
+<chat-form-component [title]="this.newChatTitle" (closeForm) = "closeChatCreating($event)"></chat-form-component>

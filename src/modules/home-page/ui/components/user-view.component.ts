@@ -3,6 +3,7 @@ import { AuthManager } from "../../../auth/services/auth.manager";
 import {toPromise} from "../../../../utils/wrap-observable-with-promise";
 import {UserInterface} from "../../../auth/interfaces/user.interface";
 import {Router} from "@angular/router";
+import * as events from "events";
 @Component({
   selector: 'user-view-component',
   templateUrl: 'user-view.component.html',
@@ -15,6 +16,7 @@ export class UserViewComponent implements OnInit{
   @Output() closeUserPanel = new EventEmitter()
 
   public currentUser: UserInterface
+  public newChatTitle: string
 
   constructor(
     public readonly authManager: AuthManager,
@@ -30,6 +32,14 @@ export class UserViewComponent implements OnInit{
   }
 
   async logout() {
-    this.authManager.logout()
+    await this.authManager.logout()
+  }
+
+  switchTitle (title: string) {
+    this.newChatTitle = title
+  }
+
+  closeChatCreating(event = '') {
+    this.newChatTitle = ''
   }
 }

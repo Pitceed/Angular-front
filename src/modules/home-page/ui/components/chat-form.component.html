@@ -1,0 +1,24 @@
+<div *ngIf="title">
+  <div class= "form__container">
+    <div class="form__title">
+     Create new {{title}} chat
+    </div>
+
+    <div class="form__body">
+
+      <div *ngIf="title == 'personal'" class="body__title">
+        Enter username
+      </div>
+      <div *ngIf="title == 'group'" class="body__title">
+        Enter chat Title
+      </div>
+
+      <div class="form__footer">
+        <input class="form__input" #newChatInput>
+        <button class="form__button" (click)="createNewChat(newChatInput.value)">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

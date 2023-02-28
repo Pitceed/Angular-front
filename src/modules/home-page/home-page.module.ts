@@ -5,6 +5,8 @@ import { CommonModule } from "../shared/common.module";
 import { ChatViewComponent } from "./ui/components/chat-view.component";
 import { HomePageRoutingModule } from "./home-page.routing-module";
 import {UserViewComponent} from "./ui/components/user-view.component";
+import {ChatFormComponent} from "./ui/components/chat-form.component";
+import {MomentFormatPipe} from "./ui/pipes/moment-format.pipe";
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import {UserViewComponent} from "./ui/components/user-view.component";
     HomePageComponent,
     ChatViewComponent,
     ChatListItemComponent,
-    UserViewComponent
+    UserViewComponent,
+    ChatFormComponent,
+    MomentFormatPipe
   ],
   imports: [
     CommonModule,

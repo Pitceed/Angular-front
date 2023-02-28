@@ -1,14 +1,14 @@
-<div *ngIf="chat" class="header">
-   {{chat.title}}
- </div>
+<div class="header">
+   {{chatTitle}}
+  <i class="material-symbols-outlined" (click)="openChatMenu()" >More_Vert</i>
+</div>
 
- <div class="messages__list">
+ <div class="messages__list" #messageList>
    <div class="scroll__wrapper">
 
      <div *ngFor="let msg of mockMessages" class="message__instance" [class.personal]="msg.authorId == currentUser.id">
        {{msg.text}}
      </div>
-
    </div>
  </div>
 

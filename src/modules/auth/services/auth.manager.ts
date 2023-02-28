@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { filter, ReplaySubject, take, tap} from "rxjs";
+import { filter, ReplaySubject, take, tap } from "rxjs";
 import { toPromise } from "../../../utils/wrap-observable-with-promise";
-import {UserInterface} from "../interfaces/user.interface";
-import {Router} from "@angular/router";
+import { UserInterface } from "../interfaces/user.interface";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthManager {
@@ -78,7 +78,7 @@ export class AuthManager {
   }
 
   public async logout() {
-    await this.router.navigate([''])
+    await this.router.navigate(['login'])
     localStorage.clear()
   }
 }

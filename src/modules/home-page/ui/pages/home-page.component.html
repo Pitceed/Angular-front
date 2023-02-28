@@ -12,7 +12,7 @@
 
     <div class="chats__column" >
       <app-chat-list-item
-        *ngFor="let chat of mockChats"
+        *ngFor="let chat of chats"
         [chat]= "chat"
         [isActive]= "currentChatId == chat.id"
         (click)="selectChat(chat)"

@@ -9,8 +9,8 @@
         <div class="message__title">
           {{ chat.title }}
         </div>
-        <div class="message_date">
-          {{ chat.lastMessage?.createdAt }}
+        <div class="message_date" *ngIf="chat.lastMessage">
+          {{ chat.lastMessage?.createdAt | moment:'HH:MM' }}
         </div>
       </div>
       <div class="chat__last__message">
